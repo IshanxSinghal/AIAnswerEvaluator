@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Answer Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .upload-container {
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+        .file-info {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #eef;
+            border-radius: 5px;
+            display: none;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        #file-upload {
+            display: none;
+        }
+        .upload-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .upload-label:hover {
+            background: #0069d9;
+        }
+    </style>
+</head>
+<body>
+
+    <nav style="background-color: #2c3e50; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="color: white; font-size: 24px; font-weight: bold;">AI Evaluator</div>
+        <div>
+            <a href="Homepage.html" style="color: white; margin-right: 20px; text-decoration: none;">Home</a>
+            <a href="EvaluatePage.html" style="color: white; margin-right: 20px; text-decoration: none;">Evaluate Page</a>
+            <a href="AboutUs.html" style="color: white; text-decoration: none;">About Us</a>
+        </div>
+    </nav>
+    <style>
+        nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding-top: 70px; /* Add padding to account for fixed navbar */
+        }
+        
+        .nav-content {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+    <h1>Upload Your Answer Sheet</h1>
+    
+    <div class="upload-container">
+        <input type="file" id="file-upload" accept=".pdf,.jpg,.jpeg,.png">
+        <label for="file-upload" class="upload-label">Choose File</label>
+        <p>Accepted file types: PDF, JPG, PNG</p>
+    </div>
+    
+    <div id="file-info" class="file-info">
+        <p>Selected file: <span id="file-name">None</span></p>
+    </div>
+    
+    <button id="submit-btn" class="submit-btn">Submit for Evaluation</button>
+
+    <script>
+        // Handle file selection
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const fileInfo = document.getElementById('file-info');
+            const fileName = document.getElementById('file-name');
+            
+            if (this.files && this.files[0]) {
+                fileName.textContent = this.files[0].name;
+                fileInfo.style.display = 'block';
+            } else {
+                fileName.textContent = 'None';
+                fileInfo.style.display = 'none';
+            }
+        });
+        
+        // Handle submit button click
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            const fileInput = document.getElementById('file-upload');
+            
+            if (fileInput.files && fileInput.files[0]) {
+                // Create FormData object to send file
+                const formData = new FormData();
+                formData.append('file', fileInput.files[0]);
+                
+                // Send file to API (uncomment and configure when API is ready)
+                /*
+                fetch('https://your-api-endpoint.com', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('File uploaded successfully!');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error uploading file.');
+                });
+                */
+                
+                // For now, just show an alert
+                alert('Your file "' + fileInput.files[0].name + '" would be sent to the evaluation API.');
+            } else {
+                alert('Please select a file first.');
+            }
+        });
+    </script>
+</body>
+</html></div></html>

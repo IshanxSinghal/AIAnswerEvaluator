@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-section {
+            margin: 40px 0;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        
+        .team-member {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .social-link {
+            color: #0077B5;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            text-decoration: underline;
+        }
+        
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav style="background-color: #2c3e50; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="color: white; font-size: 24px; font-weight: bold;">AI Evaluator</div>
+        <div>
+            <a href="Homepage.html" style="color: white; margin-right: 20px; text-decoration: none;">Home</a>
+            <a href="EvaluatePage.html" style="color: white; margin-right: 20px; text-decoration: none;">Evaluate Page</a>
+            <a href="AboutUs.html" style="color: white; text-decoration: none;">About Us</a>
+        </div>
+    </nav>
+    <style>
+        nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding-top: 70px; /* Add padding to account for fixed navbar */
+        }
+        
+        .nav-content {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+
+    <header>
+        <h1>About Our Team</h1>
+        <p>Meet the passionate individuals behind our project. We are a team of 3 members who've come up with this 
+            initiative to help students and teachers in evaluating the answer sheets.
+            Our goal is to leverage AI technology to make the evaluation process faster, more accurate, and more efficient.
+        </p>
+    </header>
+    
+    <section class="team-section">
+        <h2>Our Team Members</h2>
+        <div class="team-members">
+            <div class="team-member">
+            <img src="IshanBinary.jpeg" alt="Ishan Singhal" onerror="this.src='https://via.placeholder.com/150'; this.onerror=null;" width="150" height="150" style="object-fit: cover; object-position: top center;">
+            <h3>Ishan Singhal</h3>
+            <p>Team Member</p>
+            <a href="https://www.linkedin.com/in/ishanxsinghal" class="social-link" target="_blank">LinkedIn Profile</a>
+            </div>
+
+            <div class="team-member">
+            <img src="https://via.placeholder.com/150" alt="Shubham Sharma">
+            <h3>Shubham Sharma</h3>
+            <p>Team Member</p>
+            <a href="https://www.linkedin.com/in/shubham-sharma-25baa0320/" class="social-link" target="_blank">LinkedIn Profile</a>
+            </div>
+
+            <div class="team-member">
+            <img src="https://via.placeholder.com/150" alt="Yuvraj Singh">
+            <h3>Yuvraj Singh</h3>
+            <p>Team Member</p>
+            <a href="https://www.linkedin.com/in/yuvraj-singh-258649312/" class="social-link" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Our Team. All rights reserved.</p>
+    </footer>
+</body>
+</html></div>
